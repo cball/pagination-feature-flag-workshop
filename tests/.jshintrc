@@ -21,7 +21,9 @@
     "andThen",
     "currentURL",
     "currentPath",
-    "currentRouteName"
+    "currentRouteName",
+    "createServer",
+    "withFeature"
   ],
   "node": false,
   "browser": false,

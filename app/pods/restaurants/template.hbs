@@ -1,0 +1,17 @@
+<h1>List</h1>
+
+{{#each model as |restaurant|}}
+  <div class="restaurant">
+    {{#link-to 'restaurant' restaurant.id class="test-restaurant"}}
+      {{restaurant.name}}
+    {{/link-to}}
+  </div>
+{{/each}}
+
+{{#if features.showPagination}}
+  {{paginate-control
+    page=page
+    perPage=per_page
+    totalRows=metadata.total_rows
+    changePage="changePage"}}
+{{/if}}

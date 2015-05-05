@@ -1,0 +1,19 @@
+{{#unless onlyOnePage}}
+  <ul class="pagination">
+    <li class="{{if isFirstPage 'disabled'}}">
+      {{#if isFirstPage}}
+        <span>Previous</span>
+      {{else}}
+        <a {{action 'previousPage'}}>Previous</a>
+      {{/if}}
+    </li>
+
+    <li class="{{if isLastPage 'disabled'}}">
+      {{#if isLastPage}}
+        <span>Next</span>
+      {{else}}
+        <a {{action 'nextPage'}}>Next</a>
+      {{/if}}
+    </li>
+  </ul>
+{{/unless}}

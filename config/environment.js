@@ -3,9 +3,11 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'restaurant-list',
+    podModulePrefix: 'restaurant-list/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,6 +18,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    featureFlags: {
+      'show-pagination': false
     }
   };
 
@@ -25,6 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.featureFlags['show-pagination'] = true;
   }
 
   if (environment === 'test') {
@@ -37,10 +44,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.featureFlags['show-pagination'] = true;
   }
 
   if (environment === 'production') {
-
+    ENV.featureFlags['show-pagination'] = process.env.USE_PAGINATION === 'true';
   }
 
   return ENV;
