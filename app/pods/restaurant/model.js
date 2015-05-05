@@ -6,6 +6,6 @@ export default DS.Model.extend({
 
   image: Ember.computed('id', function() {
     let id = this.get('id');
-    return `http://lorempixel.com/400/200/food/${id}/`;
+    return `http://lorempixel.com/64/64/food/?${id}`;
   })
 });

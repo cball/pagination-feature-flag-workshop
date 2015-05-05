@@ -1,0 +1,11 @@
+{{#each restaurants as |restaurant|}}
+  {{restaurant-item restaurant=restaurant}}
+{{/each}}
+
+{{#if features.showPagination}}
+  {{paginate-control
+    page=page
+    perPage=perPage
+    totalRows=totalRows
+    changePage="changePage"}}
+{{/if}}
