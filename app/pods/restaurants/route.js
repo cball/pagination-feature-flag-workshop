@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  favoriteRestaurantService: Ember.inject.service('favorite-restaurant'),
+
   queryParams: {
     page: {
       refreshModel: true
@@ -19,6 +21,9 @@ export default Ember.Route.extend({
 
   afterModel(restaurants) {
     let controller = this.controllerFor('restaurants');
+    let service = this.get('favoriteRestaurantService');
+    let favorite = restaurants.get('firstObject');
+
     controller.set('metadata', restaurants.meta);
   }
 });

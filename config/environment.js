@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'restaurant-list',
     podModulePrefix: 'restaurant-list/pods',
     environment: environment,
+    contentSecurityPolicy: {
+      'img-src': "'self' http://lorempixel.com"
+    },
     baseURL: '/',
     locationType: 'auto',
 
